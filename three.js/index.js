@@ -1,9 +1,6 @@
-const scene = new THREE.Scene();
+import * as THREE from './node_modules/three/build/three.module.js'
 
-// const geometry = new THREE.BoxGeometry();
-// const material = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
-// const cube = new THREE.Mesh( geometry, material );
-// scene.add( cube );
+const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
 camera.position.z = 5;
@@ -12,33 +9,18 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
-// const gltfLoader = new THREE.GLTFLoader();
-// const url = 'assets/Swordb.gltf';
-// gltfLoader.load(url, (gltf) => {
-//     const root = gltf.scene;
-//     scene.add(root);
-// });
+const geometry = new THREE.BoxGeometry();
+const material = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
+const cube = new THREE.Mesh( geometry, material );
+scene.add( cube );
 
-// const loader = new THREE.GLTFLoader();
+const animate = function () {
+  requestAnimationFrame( animate );
 
-// loader.load( 'assets/Swordb.gltf', function ( gltf ) {
+  cube.rotation.x += 0.01;
+  cube.rotation.y += 0.01;
 
-//     scene.add( gltf.scene );
+  renderer.render( scene, camera );
+};
 
-//     }, undefined, function ( error ) {
-
-//     console.error( error );
-//     } );
-
-renderer.render( scene, camera )
-
-// const animate = function () {
-//   requestAnimationFrame( animate );
-
-//   cube.rotation.x += 0.01;
-//   cube.rotation.y += 0.01;
-
-//   renderer.render( scene, camera );
-// };
-
-// animate();
+animate();

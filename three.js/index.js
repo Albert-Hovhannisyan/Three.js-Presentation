@@ -31,10 +31,11 @@ const light = new THREE.DirectionalLight(0xffffff, 3);
 light.position.set(2,2,5);
 scene.add(light);
 
-const geometry = new THREE.BoxGeometry();
+const geometry_box = new THREE.BoxGeometry();
+const geometry_cone = new THREE.ConeGeometry();
 const material = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
-const cube1 = new THREE.Mesh( geometry, material );
-const cube2 = new THREE.Mesh( geometry, material );
+const cube1 = new THREE.Mesh( geometry_box, material );
+const cube2 = new THREE.Mesh( geometry_cone, material );
 cube1.position.set(4,0,0)
 cube2.position.set(-4,0,0)
 scene.add( cube1 );

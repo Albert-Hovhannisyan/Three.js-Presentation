@@ -23,8 +23,6 @@ loader.load('assets/sword.glb', function(glb){
   root.scale.set(4,4,4)
   root.position.set(0,-0.8,0)
   scene.add(root);
-}, function(err){
-  console.log("error");
 })
 
 const light = new THREE.DirectionalLight(0xffffff, 3);

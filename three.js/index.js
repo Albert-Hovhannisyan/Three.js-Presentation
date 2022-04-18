@@ -16,7 +16,6 @@ controls.enableDamping = true;
 controls.dampingFactor = 0.25;
 controls.enableZoom = true;
 controls.autoRotate = true;
-//const controls = new OrbitControls(camera, renderer.domElement)
 
 const loader = new GLTFLoader();
 loader.load('sword.glb', function(glb){
@@ -40,17 +39,6 @@ cube1.position.set(4,0,0)
 cube2.position.set(-4,0,0)
 scene.add( cube1 );
 scene.add( cube2 );
-
-// const animate = function () {
-//   requestAnimationFrame( animate );
-
-//   cube.rotation.x += 0.01;
-//   cube.rotation.y += 0.01;
-
-// renderer.render( scene, camera );
-// };
-
-// animate();
 
 function animate(){
   requestAnimationFrame(animate)

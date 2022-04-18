@@ -18,7 +18,7 @@ controls.enableZoom = true;
 controls.autoRotate = true;
 
 const loader = new GLTFLoader();
-loader.load('sword.glb', function(glb){
+loader.load('assets/sword.glb', function(glb){
   const root = glb.scene;
   root.scale.set(4,4,4)
   root.position.set(0,-0.8,0)

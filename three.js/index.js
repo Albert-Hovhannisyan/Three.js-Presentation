@@ -34,21 +34,21 @@ const geometry_cone = new THREE.ConeGeometry();
 const material1 = new THREE.MeshPhongMaterial( { color: 0xff0000 } );
 const material2 = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
 
-const cube1 = new THREE.Mesh( geometry_box, material1 );
-const cube2 = new THREE.Mesh( geometry_cone, material2 );
-cube1.position.set(4,0,0)
-cube2.position.set(-4,0,0)
-scene.add( cube1 );
-scene.add( cube2 );
+const mesh1 = new THREE.Mesh( geometry_box, material1 );
+const mesh2 = new THREE.Mesh( geometry_cone, material2 );
+mesh1.position.set(4,0,0)
+mesh2.position.set(-4,0,0)
+scene.add( mesh1 );
+scene.add( mesh2 );
 
 function animate(){
   requestAnimationFrame(animate)
 
-  cube1.rotation.x += 0.01;
-  cube1.rotation.y += 0.01;
+  mesh1.rotation.x += 0.01;
+  mesh1.rotation.y += 0.01;
 
-  cube2.rotation.x += 0.01;
-  cube2.rotation.y += 0.01;
+  mesh2.rotation.x += 0.01;
+  mesh2.rotation.y += 0.01;
 
   renderer.render(scene, camera)
 }
